@@ -1,0 +1,110 @@
+body {
+  background-color: rgb(33, 33, 33);
+  overflow: hidden;
+}
+
+.heading {
+  color: aliceblue;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 5vmin;
+}
+
+.outMostBox {
+  display: flex;
+  justify-content: center;
+  /* overflow: hidden; */
+  padding: 20px;
+}
+
+.playerTurn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid red; */
+  text-wrap: nowrap;
+  padding: 3vw;
+
+  color: rgba(240, 248, 255, 0.8);
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.5vw;
+}
+@media (max-width: 750px) {
+  .playerTurn {
+    display: none;
+  }
+}
+
+.gridContainer {
+  width: 70vmin;
+  height: 70vmin;
+  background-color: rgba(97, 201, 233, 0.5);
+  display: grid;
+  /* gap: 4%; */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border-radius: 10%;
+  box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.094);
+}
+
+.gridBlocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Calibri;
+  font-size: 15vmin;
+  font-weight: 900;
+  /* color: rgb(255, 213, 0); */
+  color: rgb(210, 255, 255);
+
+  background-color: rgba(50, 192, 220, 0.75);
+  /* background-color: rgb(0, 255, 0); */
+  margin: 5%;
+  border-radius: 30%;
+  box-shadow: 1px 2px 0.3rem 1px rgba(42, 42, 42, 0.587);
+}
+
+.result {
+  text-wrap: nowrap;
+  color: aliceblue;
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 20px;
+}
+
+.toRedClass {
+  animation: animationToRed;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.toGreenClass {
+  animation: animationToGreen;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+:root {
+  --redColor: rgba(120, 0, 0, 0.6);
+  --greenColor: rgba(0, 120, 0, 0.6);
+}
+
+@keyframes animationToRed {
+  from {
+    background-color: var(--greenColor);
+  }
+  to {
+    background-color: var(--redColor);
+  }
+}
+
+@keyframes animationToGreen {
+  from {
+    background-color: var(--redColor);
+  }
+  to {
+    background-color: var(--greenColor);
+  }
+}
